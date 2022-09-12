@@ -1,4 +1,4 @@
-# in order to run test in shell i have to type  on shell comand 'pytest -k and "the name of the file"'
+# in order to run test in shell i have to type  on shell comand 'pytest -k and "the name of the file" that i wanna test'
 
 import unittest
 
