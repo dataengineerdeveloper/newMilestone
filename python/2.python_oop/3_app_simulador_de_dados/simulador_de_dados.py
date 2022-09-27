@@ -12,6 +12,7 @@ class simuladordedado:
         resposta = input(self.menssagem)
         try:
             if resposta == 'sim' or resposta == 's':
+                #no caso da resposta ser sim, vou usar o self para ir buscar o resultado do random.
                 self.gerarvalordodado()
             elif resposta == 'não' or resposta =='nao' or resposta =='n':
                 print('agradecemos a usa participação')

@@ -22,3 +22,6 @@ def send(name, website=None, verbose=False):
     
 response = send ("justin",  verbose = True)
 print(response)
+if __name__ == "__main__":
+    pass
+

@@ -1,6 +1,7 @@
 #create class car
 
 class car():
+    #aqui eu inicializaei a app e defini os paremetros que podem ser usadas noutras functions
     def __init__(self,brand, colour, year)->str:
         self.brand = brand
         self.colour = colour

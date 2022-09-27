@@ -1,0 +1,40 @@
+Documentation FastAPI V1
+
+source: https://www.youtube.com/watch?v=GN6ICac3OXY
+
+- install FastAPI uvicorn[standard]
+- install pluggin rest client call "thunder client" on VScode
+- import the following lib: 
+        typing 
+        uuid 
+        pydantic 
+        enum
+
+
+1. i'm going to use thunder client different methods in order to understand how API request and response;
+
+2. i can validate de result of the AOI also on browser:
+special if i need to get the an interactive documentation where i can exec GET | POST or other methods directly
+
+ineteractive documentation: 
+http://localhost:8000/docs
+
+but if i need the documentation from the API just insert redoc
+
+documentaion : 
+http://localhost:8000/redoc
+
+3. Para Inicializar as validar das api tenho de exe
+
+PS C:\Users\z004hedj\Desktop\Dev\git_code\fastapi_dev> uvicorn main:app_main --reload
+
+4. para finalizar ou para fazer novo relod, basta fazer um ctrl+C
+
+
+Error that may occur if you close the project and start again,  make sure that path is exactly this:
+
+C:\Users\z004hedj\Desktop\Dev\git_code\fastapi_dev>
+
+by default path only till C:\Users\z004hedj\Desktop\Dev\git_code>
+
+if we run with this path it will raise an error like  this "error loading ASGI app. Could not import module "main"."
