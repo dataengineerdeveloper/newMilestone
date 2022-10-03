@@ -5,7 +5,7 @@ import unittest
 from bigger_guy import bigger_guy
 #from python.notebooks_xx import three_sum
 
-class altests(unittest.TestCase):
+class alltests(unittest.TestCase):
     def test_bigger_guy(self):
         print('\n\n-----------------')
         print('test function > bigger guy()')
@@ -15,7 +15,7 @@ class altests(unittest.TestCase):
         assert bigger_guy(10,10) == 10
         print('\nAll tests Passed (4/4)')
         print('----------------------')
-'''  
+'''
     def test_three_sum(self):
         print('\n\n-----------------')
         print('test function > three sum()')
@@ -24,4 +24,4 @@ class altests(unittest.TestCase):
         print('----------------------')
 '''
 if __name__ == '__main__':
-    unittest.amin()
+    unittest.main()

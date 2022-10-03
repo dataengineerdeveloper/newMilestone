@@ -1,7 +1,7 @@
 #IMPORT
 '''vamos fzer o from da pasta onde esteja os ficheiros,  e depois identificamos o ficheiro
 '''
-from PYTHON.day_6_oop_essentail_part_3_methods import my_calc
+from review_notes.8.day_6_oop_essentail_part_3_methods import my_calc
 
 calc1 = my_calc(100,50)
 #nome da variavel anterior.total dos metodos dentro da class neste caso,  total e diff
