@@ -1,0 +1,37 @@
+Nós modificamos a estrutura do projeto que realizava o processamento de dados para
+um formato que seja orientado a objetos conforme descrito abaixo
+
+root
+  /src
+    __init__.py
+    /bases
+      __init__.py
+      base.py
+      escolas.py
+      ideb.py
+    configs.py
+    processar.py
+  run.py
+
+O pacote "bases" contém as representações de bases de dados a serem processadas no formato de objetos.
+O arquivo base.py contém a classe pai principal, _BaseDeDados, que representa como uma base de dados
+deve ser processada nesta representação.
+O arquivo escolas.py contém a classe Escola que estende _BaseDeDados de forma a processar os dados
+contidos nas bases do censo escolar para um ano especificado.
+O arquivo ideb.py contém a classe IDEB que estende _BaseDeDados de forma a processar os dados
+contidos nas bases do ideb numa base única de saída
+O arquivo configs.py contém os caminhos para os dados de entrada e saída dos dados.
+O arquivo processar.py contém a função junta_dados que recebe as bases de escolas e ideb processadas
+e gera uma base cruzada de saída.
+O arquivo run.py contém o método main e controla a execução do processamento de dados, no qual ele
+instancia objetos de escola (anos de 2017 e 2019) e do ideb, executa os métodos de pipeline de
+processamento, roda a função junta_dados e exporta a base cruzada resultante.
+
+O seu papel é modificar o arquivo run.py para criar os seguintes comandos cli
+1. processa-base: Deve receber o nome de uma base de dados (pode ser escola ou ideb)
+e um ano (pode ser um inteiro ou uma string N/A) e opcionalmente recebe uma string com
+um caminho de entrada e um string com um caminho de saída. Este comando deve instanciar
+o objeto adequadamente e executar o pipeline do mesmo.
+2. gera-datamart: Pode receber uma string com um caminho de entrada e outra com um caminho
+de saída, e deve carregar as bases de escolas processadas de 2017 e 2019, a base de ideb
+processada e gerar a base cruzada e exporta-la para o caminho de interesse
