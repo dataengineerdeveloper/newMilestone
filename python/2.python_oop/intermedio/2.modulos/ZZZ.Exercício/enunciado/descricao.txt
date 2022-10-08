@@ -1,0 +1,19 @@
+Tome o arquivo run.py contido nesta pasta e construa a seguinte estrutura
+
+root
+  /src
+    __init__.py
+    carregar.py
+    configs.py
+    exportar.py
+    processar.py
+  run.py
+
+Os arquivos devem ter os seguintes conteúdos
+- configs.py: As variáveis de caminho de entrada e caminho de saída
+- carregar.py: Todas as funções de carregamento (carrega_base_escola, carrega_base_ideb)
+- processar.py: Todas as funções de processamento (junta_bases, processa_base_escola, processa_base_ideb)
+- exportar.py: Todas as funções de exportação (exporta_bases)
+- __init__.py: Acesso a todas as funções dos 3 arquivos acima
+- run.py: Arquivo que tem uma linha de "from src import *" e que contém a definição e execução da função main
+de forma protegida

@@ -1,0 +1,6 @@
+Falar é fácil. Mostre-me o código. (Linus Torvalds)
+Não é a linguagem de programação que define o programador, mas sim sua lógica.
+Faça como um programador. Quando tudo está errado e confuso, apague tudo e recomece do zero.
+Linguagens não morrem mas sim seus programadores.
+Uma linguagem não faz seu código ser bué mau, programadores bons fazem seu código ser bué mau.
+Retirado de https://www.pensador.com/frases_de_programador/

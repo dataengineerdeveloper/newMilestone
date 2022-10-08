@@ -1,0 +1,3 @@
+# create enviroment in guthub using git actions
+# configure pipeline to get CICD working in git
+# check if everything is running
