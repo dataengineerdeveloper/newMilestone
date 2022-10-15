@@ -1,0 +1,22 @@
+legume,couve
+legume,alface
+legume,repolho
+legume,couve de bruxelas
+legume,alho francês
+legume,beterraba
+legume,batata
+legume,cebola
+legume,pepino
+legume,beringela
+legume,penca
+fruto,banana
+fruto,maçã
+fruto,pêra
+fruto,laranja
+fruto,limão
+fruto,lima
+fruto,pêssego
+fruto,tangerina
+fruto,diospiro
+fruto,castanha
+fruto,noz
