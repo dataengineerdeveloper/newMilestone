@@ -1,0 +1,5 @@
+PASTA_DADOS = "dados"
+PASTA_SAIDA = "saida"
+
+
+PASTA_SAIDA_AQUISICAO = F"{PASTA_SAIDA}/aquisicao"
