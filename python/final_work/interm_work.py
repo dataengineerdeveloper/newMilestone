@@ -31,7 +31,7 @@ def menu(dicionario):
 
 def opmenu(dicionario):
 
-    op = input('Introduza a opção pretendida: ')
+    op = input(int('Introduza a opção pretendida: '))
 
     if op == 1:
             print(f"\nO conteúdo do dicionário é:\n{dicionario}\n")
@@ -83,7 +83,7 @@ def submenu(tipo):
 
 def opsubmenu(tipo):
     
-    op = input('Introduza a opção pretendida: ')
+    op = input(int('Introduza a opção pretendida: '))
 
     
 

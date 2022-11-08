@@ -6,8 +6,7 @@ the calculation is bases on the definition of body masss devided by the square o
 and is expressed in units of kg/m2, resulting from mass in kilograms and height in meters
 
 '''
-
-from tkinter import *
+from tkinter import * # pylint: disable=wildcard-import
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
@@ -79,19 +78,19 @@ def slider_change(event):
     Height.set(get_current_value())
     
     size=int(float(get_current_value()))
-    img=(Image.open("images/man.png"))
+    img= (Image.open("images/man.png"))
     resized_image=img.resize((50,10+size))
     photo2=ImageTk.PhotoImage(resized_image)
-    second_image.config(image=photo2)
-    second_image.place(x=70,y=550-size)
-    second_image.image=photo2
+    secondimage.config(image=photo2)
+    secondimage.place(x=70,y=550-size)
+    secondimage.image=photo2
     
 #command to change backgroun color scle
 style = ttk.Style()
 style.configure("TScale",background="white")
-slider1=ttk.scale(root,from_=0, to=220,orient='horizontal', style="TScale",
-                  command=slider_change,Variable=current_value)
-slider1.place(x=80,y=250)
+slider=ttk.Scale(root,from_=0, to=220,orient='horizontal', style="TScale",
+                  command=slider_change,variable=current_value)
+slider.place(x=80,y=250)
 #>>>>>>>>> Slider_2 <<<<<<<<<<<<<<
 current_value2 = tk.DoubleVar()
 
@@ -104,8 +103,8 @@ def slider_change2(event):
 #command to change backgroun color scle
 style2 = ttk.Style()
 style2.configure("TScale",background="white")
-slider2=ttk.scale(root,from_=0, to=220,orient='horizontal', style="TScale",
-                  command=slider_change2,Variable=current_value2)
+slider2=ttk.Scale(root,from_=0, to=200,orient='horizontal', style="TScale",
+                  command=slider_change2,variable=current_value2)
 slider2.place(x=300,y=250)
 
 
@@ -114,27 +113,27 @@ slider2.place(x=300,y=250)
 Height=StringVar()
 Weight=StringVar()
 height=Entry(root,textvariable=Height,width=5,font='arial 50',bg="#fff",fg="#000",bd=0,justify=CENTER) #align text in center
-height.place(x=32,y=160)
+height.place(x=35,y=160)
 Height.set(get_current_value())
 
-weight=Entry(root,textvariable=Height,width=5,font='arial 50',bg="#fff",fg="#000",bd=0,justify=CENTER) #align text in center
+weight=Entry(root,textvariable=Weight,width=5,font='arial 50',bg="#fff",fg="#000",bd=0,justify=CENTER) #align text in center
 weight.place(x=255,y=160)
-weight.set(get_current_value2())
+Weight.set(get_current_value2())
 
 #body_image
-second_image=Label(root,bg="lightblue")
-second_image.place(x=70,y=530)
+secondimage=Label(root,bg="lightblue")
+secondimage.place(x=70,y=530)
 
 
 Button(root,text="View Report",width=15,height=2,font="arial 10 bold",bg="#1f6e68",fg="white",command=BMI).place(x=280,y=340)
 
-label1=Label(root,foot="arial 60 bold",bg="lightblue",fg="#fff")
+label1=Label(root,font="arial 60 bold",bg="lightblue",fg="#fff")
 label1.place(x=125,y=305)
 
-label2=Label(root,foot="arial 20 bold",bg="lightblue",fg="#3b3a3a")
+label2=Label(root,font="arial 20 bold",bg="lightblue",fg="#3b3a3a")
 label2.place(x=280,y=430)
 
-label3=Label(root,foot="arial 10",bg="lightblue")
+label3=Label(root,font="arial 10",bg="lightblue")
 label3.place(x=200,y=500)
 
 root.mainloop()
