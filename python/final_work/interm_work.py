@@ -31,28 +31,28 @@ def menu(dicionario):
 
 def opmenu(dicionario):
 
-    op = input(int('Introduza a opção pretendida: '))
+    op = input('Introduza a opção pretendida: ')
 
-    if op == 1:
+    if op == '1':
             print(f"\nO conteúdo do dicionário é:\n{dicionario}\n")
             esperartecla()
             menu(dicionario)
         
-    elif op == 2:
+    if op == '2':
             dicionario.clear()
             print("\nDicionário limpo!")
             esperartecla()
             menu(dicionario)
         
-    elif op == 3:
+    if op == '3':
             while verificardici(dicionario, "legume"):
                 submenu("legume")
             
-    elif op == 4:
+    if op == '4':
             while verificardici(dicionario, "fruto"):
                 submenu("fruto")
 
-    elif op == 5:
+    if op == '5':
             system('cls')
             gravarfich(construirfich(dicionario))       
             print("\nAplicação terminada!\n")
@@ -83,33 +83,33 @@ def submenu(tipo):
 
 def opsubmenu(tipo):
     
-    op = input(int('Introduza a opção pretendida: '))
+    op = input('Introduza a opção pretendida: ')
 
     
 
-    if op == 1:
+    if op == '1':
             print(f"\nOs {tipo}s constantes do dicionário são:\n")
             listar(tipo)
             esperartecla()
             submenu(tipo)
         
-    elif op == 2:
+    if op == '2':
             print(f"O {tipo} «{remover(tipo)}» foi removido!")
             esperartecla()
             submenu(tipo)
         
-    elif op == 3:
+    if op == '3':
             print(f"O {tipo} «{adicionar(tipo)}» foi adicionado!")
             esperartecla()
             submenu(tipo)            
 
-    elif op == 4:
+    if op == '4':
             escolha1,escolha2 = editar(tipo)
             print(f"O {tipo} «{escolha1}» foi editado para «{escolha2}»!")
             esperartecla()
             submenu(tipo) 
             
-    elif op == 5:
+    if op == '5':
             system('cls')
             menu(dicionario)     
 
