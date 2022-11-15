@@ -1,9 +1,11 @@
 '''
-the goal of this program is basically create a BMI(Body mass index) calculator and the concept
-is a index from the mass and height of person.
+O objectivo deste trabalho é criar um simples applicação que me indique qual a minha taxa IMC(indice de mass corpopral)
+com base na minha altura e peso. 
 
-the calculation is bases on the definition of body masss devided by the square of the body height,
-and is expressed in units of kg/m2, resulting from mass in kilograms and height in meters
+Funcionalidade:
+    1. selecionar a altura
+    2. selecionar o peso
+    3. clicar em "view report" e ver o resultado da aplicaçao
 
 '''
 from tkinter import * # pylint: disable=wildcard-import
@@ -13,36 +15,36 @@ from PIL import Image, ImageTk
 
 
 root=Tk()
-root.title("BMI CALCULATOR")
-root.geometry("470x580+300+200")
+root.title("CALCULADORA DE IMC ")
+root.geometry("470x580+400+300")
 root.resizable(False,False)
 root.configure(bg="#f0f1f5")
 
-def BMI():
+def IMC():
     h=float(Height.get())
     w=float(Weight.get())
     
-    # convert height value by meters
+    # conversao da altura para metros
     m=h/100
-    bmi=round(float(w/m**2),1)
-    #print(bmi)
-    label1.config(text=bmi)
+    imc=round(float(w/m**2),1)
+    #print(imc)
+    label1.config(text=imc)
     
-    if bmi<=18.5:
-        label2.config(text="underweight!")
-        label3.config(text="you have lower weight then normal body!")
+    if imc<=18.5:
+        label2.config(text="Abaixo do peso!")
+        label3.config(text="IMC baixo\n acordo com o seu peso e altura!")
         
-    elif bmi> 18.5 and bmi<=25:
+    elif imc> 18.5 and imc<=25:
         label2.config(text="Normal!")
-        label3.config(text="it indicates that you are healthy!")
+        label3.config(text="IMC normal\nde acordo com os seus dados está\n saudavel!")
     
-    elif bmi> 25 and bmi<=30:
-        label2.config(text="Overweight!")
-        label3.config(text="it indicates that a person is \n slightly overweight! \n A Doctor Advise lose some weight!")
+    elif imc> 25 and imc<=30:
+        label2.config(text="Acima do Peso!")
+        label3.config(text="IMC ligueiramente elevado\n O seu medico recomendaria\n perder algum peso!")
         
     else:
-        label2.config(text="Obes!")
-        label3.config(text="Health may be at risk, if you don't\n lose weight!")
+        label2.config(text="Obesidade!")
+        label3.config(text="IMC elevado\nA sua saude poderá estar em risco\nPerda algum peso!")
 
 
 #icon
@@ -125,13 +127,13 @@ secondimage=Label(root,bg="lightblue")
 secondimage.place(x=70,y=530)
 
 
-Button(root,text="View Report",width=15,height=2,font="arial 10 bold",bg="#1f6e68",fg="white",command=BMI).place(x=280,y=340)
+Button(root,text="Ver Relatório",width=15,height=2,font="arial 10 bold",bg="#1f6e68",fg="white",command=IMC).place(x=280,y=340)
 
 label1=Label(root,font="arial 60 bold",bg="lightblue",fg="#fff")
 label1.place(x=125,y=305)
 
 label2=Label(root,font="arial 20 bold",bg="lightblue",fg="#3b3a3a")
-label2.place(x=280,y=430)
+label2.place(x=260,y=430)
 
 label3=Label(root,font="arial 10",bg="lightblue")
 label3.place(x=200,y=500)
