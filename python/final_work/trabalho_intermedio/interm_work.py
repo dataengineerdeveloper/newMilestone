@@ -1,69 +1,55 @@
-##################################################
-#        FICHA 3 - EXERCICIO 6 (TRABALHO)        #
-##################################################
-
-
-#importar bibliotecas
-
 from os import system
 from datetime import datetime
 
-
-#FUNÇÕES:
-
-#menu principal
 
 def menu(dicionario):
    
     system('cls')
 
     print('\033[1m''                      MENU\n'+'\033[0m')
-    print('      1.  Visualizar conteúdo do dicionário\n')
+    print('      1.  Ver dicionario\n')
     print('      2.  Limpar dicionário\n')
-    print('      3.  Legumes\n')
-    print('      4.  Frutos\n')
-    print('      5.  Terminar aplicação\n')
+    print('      3.  Categoria Legumes\n')
+    print('      4.  Categoria Frutos\n')
+    print('      5.  Fechar aplicação\n')
 
     opmenu(dicionario)
 
 
-#opções do menu principal
 
 def opmenu(dicionario):
 
-    op = input('Introduza a opção pretendida: ')
+    opcao = input('Inserir opção: ')
 
-    if op == '1':
-            print(f"\nO conteúdo do dicionário é:\n{dicionario}\n")
-            esperartecla()
+    if opcao == '1':
+            print(f"\nDados do dicionário:\n{dicionario}\n")
+            aguardar()
             menu(dicionario)
         
-    if op == '2':
+    if opcao == '2':
             dicionario.clear()
             print("\nDicionário limpo!")
-            esperartecla()
+            aguardar()
             menu(dicionario)
         
-    if op == '3':
+    if opcao == '3':
             while verificardici(dicionario, "legume"):
                 submenu("legume")
             
-    if op == '4':
+    if opcao == '4':
             while verificardici(dicionario, "fruto"):
                 submenu("fruto")
 
-    if op == '5':
+    if opcao == '5':
             system('cls')
             gravarfich(construirfich(dicionario))       
-            print("\nAplicação terminada!\n")
+            print("\nAplicação fechada!\n")
 
     else:
-            print("\nOpção inválida!")
-            esperartecla()
+            print("\nTente novamente!")
+            aguardar()
             menu(dicionario)
           
-            
-#submenus
 
 def submenu(tipo):
     
@@ -79,47 +65,42 @@ def submenu(tipo):
     opsubmenu(tipo)
 
 
-#opções dos submenus
-
 def opsubmenu(tipo):
     
-    op = input('Introduza a opção pretendida: ')
+    opcao = input('Inserir opção: ')
 
     
 
-    if op == '1':
-            print(f"\nOs {tipo}s constantes do dicionário são:\n")
+    if opcao == '1':
+            print(f"\nOs {tipo}s elementos dos dicionário :\n")
             listar(tipo)
-            esperartecla()
+            aguardar()
             submenu(tipo)
         
-    if op == '2':
-            print(f"O {tipo} «{remover(tipo)}» foi removido!")
-            esperartecla()
+    if opcao == '2':
+            print(f"O {tipo} «{remover(tipo)}» foi removido")
+            aguardar()
             submenu(tipo)
         
-    if op == '3':
-            print(f"O {tipo} «{adicionar(tipo)}» foi adicionado!")
-            esperartecla()
+    if opcao == '3':
+            print(f"O {tipo} «{adicionar(tipo)}» foi adicionado")
+            aguardar()
             submenu(tipo)            
 
-    if op == '4':
+    if opcao == '4':
             escolha1,escolha2 = editar(tipo)
-            print(f"O {tipo} «{escolha1}» foi editado para «{escolha2}»!")
-            esperartecla()
+            print(f"O {tipo} «{escolha1}» foi alterada para «{escolha2}»!")
+            aguardar()
             submenu(tipo) 
             
-    if op == '5':
+    if opcao == '5':
             system('cls')
             menu(dicionario)     
 
     else:
-            print("Opção inválida!")
-            esperartecla()
+            print("Tente novamente!")
+            aguardar()
             submenu(tipo)
-  
-    
-#listar por tipo
 
 def listar(tipo):
     
@@ -128,9 +109,7 @@ def listar(tipo):
             print(item[1])
             
     print('\n')    
-  
-  
-#remover por tipo
+
 
 def remover(tipo):
     
@@ -143,9 +122,6 @@ def remover(tipo):
             dicionario[tipo].remove(dicionario[tipo][indice])
             
     return(escolha)
-        
-    
-#adicionar por tipo
 
 def adicionar(tipo):
     
@@ -154,13 +130,12 @@ def adicionar(tipo):
         escolha = input(f'\nIntroduza o {tipo} a adicionar: ').lower()
 
     while escolha in dicionario[tipo]:
-        escolha = input(f"\nO {tipo} «{escolha}» já existe no dicionário.\nIntroduza um outro {tipo}: ")
+        escolha = input(f"\nO {tipo} «{escolha}» já existe no dicionário.\nInserir outro {tipo}: ")
 
     dicionario[tipo].append(escolha)
     return(escolha)
             
-       
-#editar por tipo
+
         
 def editar(tipo):
     
@@ -170,7 +145,7 @@ def editar(tipo):
     
     escolha2 = ''
     while escolha2 =='':
-        escolha2 = input(f'\nIntroduza o nome que irá editar o {tipo} {escolha1}: ').lower()    
+        escolha2 = input(f'\nInserir o nome a alterar {tipo} {escolha1}: ').lower()    
         
     for indice, item in enumerate (dicionario[tipo]):
         if item == escolha1:
@@ -178,9 +153,6 @@ def editar(tipo):
             
     return(escolha1,escolha2)   
            
-
-#construir novo conteúdo para gravar ficheiro
-
 def construirfich(dicionario):
 
     ncont = []
@@ -193,9 +165,6 @@ def construirfich(dicionario):
             ncont.append('\n')
 
     return ncont
-
-
-#gravar novo conteúdo num ficheiro com nome, data e hora
 
 def gravarfich(ncont):
 
@@ -210,21 +179,18 @@ def gravarfich(ncont):
         fich = open(nomefich, 'w', encoding='UTF-8-SIG')
         fich.writelines(ncont)
         fich.close()
-        print(f"Ficheiro gravado com o nome: {nomefich}")
+        print(f"Ficheiro salvo: {nomefich}")
 
     except:
         
-        print("Erro ao gravar ficheiro!")
+        print("Erro a salvar!")
 
 
-#esperar entrada de teclado
-
-def esperartecla():
+def aguardar():
     
-    input("\nPrima a tecla «Enter» para continuar.")
+    input("\nPrima «Enter» para continuar.")
 
 
-#verificar existência de chaves no dicionário
 
 def verificardici(dicionario, tipo):
 
@@ -232,14 +198,9 @@ def verificardici(dicionario, tipo):
         if len(dicionario[tipo])>0:
             return True
     except:
-        print(f"\nO dicionário não contem {tipo}s. Escolha outra opção.\n")
-        esperartecla()
+        print(f"\nO dicionário contem {tipo}s. Escolhe outra opção.\n")
+        aguardar()
         menu(dicionario)
-
-
-#PROGRAMA PRINCIPAL:
-
-#importar dados do ficheiro
 
 try:
     
@@ -249,10 +210,8 @@ try:
 
 except:
     
-    print("Erro ao abrir ficheiro!")
+    print("Erro ao abrir!")
 
-
-#construir dicionário
 
 dicionario = {}
 
@@ -267,8 +226,6 @@ for dados in cont:
         dicionario[tipo] = dicionario[tipo] + [nome]
  
 
-#apresentar o menu principal
 
 menu(dicionario)
 
-##################################################
